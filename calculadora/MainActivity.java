@@ -1,0 +1,33 @@
+package com.manfe.calculadora;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+    private EditText txtN1;
+    private TextView txtR;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        txtN1 = findViewById(R.id.textN1);
+        txtR = findViewById(R.id.textR);
+    }
+    public void impar(View view) {
+        int valor1 = Integer.parseInt(txtN1.getText().toString());
+        for (int i = 0; i > valor1; i++){
+            if (i % 2 != 0){
+                txtR.setText(String.valueOf(i));
+            }
+        }
+
+        /*txtR.setText(String.valueOf(impar());*/
+    }
+
+}
